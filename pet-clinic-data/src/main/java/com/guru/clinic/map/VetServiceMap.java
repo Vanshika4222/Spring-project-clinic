@@ -2,9 +2,11 @@ package com.guru.clinic.map;
 
 import com.guru.clinic.model.Vet;
 import com.guru.clinic.service.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
@@ -13,7 +15,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet vet) {
-        return super.save(vet.getId(), vet);
+        return super.save(vet);
     }
 
     @Override

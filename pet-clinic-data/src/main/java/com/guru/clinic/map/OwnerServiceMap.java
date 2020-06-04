@@ -2,9 +2,11 @@ package com.guru.clinic.map;
 
 import com.guru.clinic.model.Owner;
 import com.guru.clinic.service.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
@@ -13,7 +15,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner save(Owner owner) {
-        return super.save(owner.getId(), owner);
+        return super.save(owner);
     }
 
     @Override
