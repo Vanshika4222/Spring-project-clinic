@@ -1,4 +1,4 @@
-package com.guru.clinic.map;
+package com.guru.clinic.service.map;
 
 import com.guru.clinic.model.BaseEntity;
 
@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {

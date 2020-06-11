@@ -1,4 +1,4 @@
-package com.guru.clinic.map;
+package com.guru.clinic.service.map;
 
 import com.guru.clinic.model.Owner;
 import com.guru.clinic.service.OwnerService;
