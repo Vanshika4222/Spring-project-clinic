@@ -2,11 +2,13 @@ package com.guru.clinic.service.map;
 
 import com.guru.clinic.model.Vet;
 import com.guru.clinic.service.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
