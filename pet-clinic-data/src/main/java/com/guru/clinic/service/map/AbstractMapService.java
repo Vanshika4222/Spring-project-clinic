@@ -42,11 +42,11 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
         map.entrySet().removeIf(idtEntry -> idtEntry.getValue().equals(object));
     }
 
-    private Long getNextId()
-    {
-        if (map.isEmpty())
+    private Long getNextId() {
+        if (map.isEmpty()) {
             return 1L;
-        else
+        } else {
             return Collections.max(map.keySet()) + 1;
+        }
     }
 }
