@@ -2,7 +2,6 @@ package com.guru.clinic.bootstrap;
 
 import com.guru.clinic.model.Owner;
 import com.guru.clinic.model.Pet;
-import com.guru.clinic.model.PetType;
 import com.guru.clinic.model.Vet;
 import com.guru.clinic.model.Visit;
 import com.guru.clinic.service.OwnerService;
@@ -13,7 +12,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -35,6 +33,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Pet dog = new Pet();
+
         dog.setName("dog");
 
         petService.save(dog);
@@ -45,12 +44,13 @@ public class DataLoader implements CommandLineRunner {
         petService.save(cat);
 
         Owner owner1 = new Owner();
+
         owner1.setFirstName("Alex");
         owner1.setLastName("Oreo");
         owner1.setAddress("101 Wickham");
         owner1.setCity("Boston");
         owner1.setTelephone("12121212");
-       // owner1.getPets().add(dog);
+        // owner1.getPets().add(dog);
 
         ownerService.save(owner1);
 
@@ -61,7 +61,6 @@ public class DataLoader implements CommandLineRunner {
         owner2.setCity("Boston");
         owner2.setTelephone("12121212");
         //owner2.getPets().add(cat);
-
 
         ownerService.save(owner2);
 
