@@ -17,6 +17,7 @@ import java.util.Set;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @ExtendWith(MockitoExtension.class)
 class OwnerControllerTest {
@@ -44,6 +45,8 @@ class OwnerControllerTest {
     void listOwners() throws Exception {
         when(ownerService.findAll()).thenReturn(owners);
 
-        mockMvc.perform(get("/owners")).andExpect(status().is(200));
+        mockMvc.perform(get("/owners"))
+               .andExpect(status().isOk())
+               .andExpect(view().name("owners/index"));
     }
 }
